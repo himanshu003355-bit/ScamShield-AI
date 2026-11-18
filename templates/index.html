@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>ScamShield AI | Message Safety Analyzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-icon">S</span><span>ScamShield <b>AI</b></span></a>
+  <span class="top-tag"><i></i> NLP SECURITY LAB</span>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow"><span>✦</span> DIGITAL SAFETY, MADE SMARTER</div>
+    <h1>Think before<br><em>you click.</em></h1>
+    <p class="subhead">Analyze suspicious messages and links with an explainable AI-assisted safety checker.</p>
+    <div class="trust-row"><span>◎ Text analysis</span><span>⌁ URL signals</span><span>◈ Explainable results</span></div>
+  </section>
+  <section class="workspace">
+    <div class="panel input-panel">
+      <div class="panel-heading"><div><span class="step">01</span><h2>Inspect a message</h2></div><span class="live">● READY</span></div>
+      <p class="muted">Paste an SMS, email snippet, job offer or suspicious message below.</p>
+      <textarea id="message" maxlength="5000" placeholder="Example: Congratulations! You won a prize. Claim now by paying a processing fee..."></textarea>
+      <div class="input-meta"><span id="counter">0 / 5,000</span><button class="text-btn" id="clearBtn">Clear text</button></div>
+      <button class="analyze-btn" id="analyzeBtn"><span>Analyze message</span><b>→</b></button>
+      <div class="examples"><span>TRY AN EXAMPLE</span><button data-example="safe">Normal message</button><button data-example="scam">Prize scam</button><button data-example="otp">OTP request</button></div>
+    </div>
+    <div class="panel result-panel" id="resultPanel">
+      <div class="panel-heading"><div><span class="step">02</span><h2>Analysis report</h2></div><span class="report-icon">⌁</span></div>
+      <div class="empty-state" id="emptyState"><div class="radar">◎</div><h3>Your report appears here</h3><p>Submit a message to see its risk assessment, detected signals and safety tips.</p></div>
+      <div id="report" hidden>
+        <div class="verdict-row"><div><span class="muted tiny">ASSESSMENT</span><h3 id="verdict">—</h3></div><div class="score"><strong id="score">0</strong><small>/100 risk</small></div></div>
+        <div class="meter"><span id="meterFill"></span></div>
+        <div class="meter-labels"><span>LOW</span><span>MODERATE</span><span>HIGH</span></div>
+        <div class="report-section"><h4>Detected signals</h4><ul id="signals"></ul></div>
+        <div class="report-section" id="urlSection" hidden><h4>URL observations</h4><div id="urlResults"></div></div>
+        <div class="report-section"><h4>Recommended next steps</h4><ul id="recommendations"></ul></div>
+        <div class="model-note" id="modelNote"></div>
+        <p class="disclaimer" id="disclaimer"></p>
+      </div>
+      <div class="loading" id="loading" hidden><div class="spinner"></div><p>Reviewing text patterns…</p></div>
+    </div>
+  </section>
+  <section class="feature-grid">
+    <article><span>01 / DETECT</span><h3>Pattern recognition</h3><p>TF-IDF and logistic regression learn patterns from the included sample dataset.</p></article>
+    <article><span>02 / EXPLAIN</span><h3>Readable signals</h3><p>Rule-based indicators show why a message may deserve extra attention.</p></article>
+    <article><span>03 / PROTECT</span><h3>Safer decisions</h3><p>Practical reminders help users verify messages without interacting with suspicious links.</p></article>
+  </section>
+  <footer><span>SCAMSHIELD AI · COLLEGE OPEN INNOVATION PROJECT</span><span>Built with Python + NLP</span></footer>
+</main>
+<script src="/static/app.js"></script>
+</body></html>
